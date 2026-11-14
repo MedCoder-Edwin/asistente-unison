@@ -10,51 +10,18 @@ El flujo de datos consta de seis etapas secuenciales desde la ingesta documental
 
 ```mermaid
 flowchart TD
-    subgraph S1 ["1. Base documental"]
-        direction TB
-        A["PDF · Reglamentos · Convocatorias · Manuales"]
-    end
+    A["1. Base documental\nPDF · Reglamentos · Convocatorias · Manuales  "] --> B["2. Procesamiento y fragmentación\nExtracción · Limpieza · Chunking · Metadata  "]
+    B --> C["3. Representación vectorial\nBGE-M3 · Embeddings de 1024 dimensiones  "]
+    C --> D["4. Recuperación de información\nChromaDB · Búsqueda semántica · Top-K  "]
+    D --> E["5. Generación de respuestas\nQwen 2.5 3B · Prompt de control · Contexto  "]
+    E --> F["6. Respuesta fundamentada\nRespuesta · Referencias · Documento · Página  "]
 
-    subgraph S2 ["2. Procesamiento y fragmentación"]
-        direction TB
-        B["Extracción · Limpieza · Chunking · Metadata"]
-    end
-
-    subgraph S3 ["3. Representación vectorial"]
-        direction TB
-        C["BGE-M3 · Embeddings de 1024 dimensiones"]
-    end
-
-    subgraph S4 ["4. Recuperación de información"]
-        direction TB
-        D["ChromaDB · Búsqueda semántica · Top-K"]
-    end
-
-    subgraph S5 ["5. Generación de respuestas"]
-        direction TB
-        E["Qwen 2.5 3B · Prompt de control · Contexto recuperado"]
-    end
-
-    subgraph S6 ["6. Respuesta fundamentada"]
-        direction TB
-        F["Respuesta · Referencias · Documento · Página"]
-    end
-
-    S1 --> S2 --> S3 --> S4 --> S5 --> S6
-
-    style S1 fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
-    style S2 fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
-    style S3 fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
-    style S4 fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
-    style S5 fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
-    style S6 fill:#ecfdf5,stroke:#a7f3d0,color:#064e3b
-
-    style A fill:#ffffff,stroke:none,color:#475569
-    style B fill:#ffffff,stroke:none,color:#475569
-    style C fill:#ffffff,stroke:none,color:#475569
-    style D fill:#ffffff,stroke:none,color:#475569
-    style E fill:#ffffff,stroke:none,color:#475569
-    style F fill:#ffffff,stroke:none,color:#065f46
+    style A fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style B fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style C fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style D fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style E fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style F fill:#ecfdf5,stroke:#a7f3d0,color:#064e3b
 ```
 
 ## Descripción técnica por etapas
