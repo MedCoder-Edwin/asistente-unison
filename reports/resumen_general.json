@@ -1,0 +1,80 @@
+{
+  "total_documentos": 15,
+  "total_paginas": 442,
+  "documentos_por_categoria": {
+    "reglamentos": 8,
+    "leyes": 5,
+    "manuales": 2
+  },
+  "paginas_con_texto": 398,
+  "paginas_escaneadas": 30,
+  "paginas_vacias": 14,
+  "caracteres_totales": 642696,
+  "caracteres_por_pagina": {
+    "count": 442.0,
+    "mean": 1451.5,
+    "std": 807.5,
+    "min": 0.0,
+    "25%": 976.0,
+    "50%": 1630.0,
+    "75%": 2022.0,
+    "max": 3277.0
+  },
+  "paginas_por_documento": {
+    "count": 15.0,
+    "mean": 29.5,
+    "std": 23.6,
+    "min": 2.0,
+    "25%": 9.5,
+    "50%": 26.0,
+    "75%": 43.0,
+    "max": 73.0
+  },
+  "paginas_con_tablas": 9,
+  "total_articulos_detectados": 558,
+  "total_encabezados_detectados": 964,
+  "total_elementos_lista": 1296,
+  "documentos_sin_articulos": [
+    "Definicion_procedimiento_y_criterios_para_el_nombramiento_de_Profesor_Investigador_Honorario_Enero 2022.pdf",
+    "Guia_de_uso_para_becas_de_ayudantia_2025.pdf",
+    "Guia_de_uso_para_becas_estudiantiles_2025.pdf",
+    "Lineamientos_Generales_Asignación_Becas_Ayudantia_2026.pdf",
+    "Lineamientos_Generales_Asignación_Becas_Estudiantiles_2026.pdf",
+    "MODELO_EDUCATIVO-FEB-2023.pdf",
+    "criterios_programacionacad_posgrados.pdf"
+  ],
+  "grupos_duplicados_o_versiones": 1,
+  "total_fragmentos": 214,
+  "tamano_fragmento_caracteres": {
+    "count": 214.0,
+    "mean": 1247.9,
+    "std": 651.4,
+    "min": 11.0,
+    "25%": 616.5,
+    "50%": 1502.5,
+    "75%": 1790.5,
+    "max": 2000.0
+  },
+  "tamano_fragmento_tokens_aprox": {
+    "count": 214.0,
+    "mean": 312.0,
+    "std": 162.8,
+    "min": 3.0,
+    "25%": 154.0,
+    "50%": 375.5,
+    "75%": 447.5,
+    "max": 500.0
+  },
+  "fragmentos_por_documento": {
+    "count": 5.0,
+    "mean": 42.8,
+    "std": 28.6,
+    "min": 24.0,
+    "25%": 29.0,
+    "50%": 29.0,
+    "75%": 39.0,
+    "max": 93.0
+  },
+  "fragmentos_duplicados_exactos": 6,
+  "fragmentos_menores_a_200_caracteres": 25
+}

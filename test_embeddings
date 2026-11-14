@@ -1,0 +1,50 @@
+
+from src.document_loader import load_documents
+from src.text_splitter import DocumentSplitter
+from src.embeddings import EmbeddingGenerator
+
+
+# 1. Extraer documentos
+documents = load_documents("data/documentos")
+
+# 2. Fragmentar documentos
+splitter = DocumentSplitter(
+    chunk_size=2000,
+    chunk_overlap=400
+)
+
+chunks = splitter.split_documents(documents)
+
+# 3. Inicializar generador de embeddings
+generator = EmbeddingGenerator(
+    model="bge-m3",
+    batch_size=16
+)
+
+# 4. Generar embeddings
+embedded_documents = generator.embed_documents(chunks)
+
+# 5. Mostrar resultados
+print("\n" + "=" * 55)
+print("RESULTADOS DE GENERACIÓN DE EMBEDDINGS")
+print("=" * 55)
+
+print("Total de fragmentos:", len(embedded_documents))
+
+if embedded_documents:
+
+    first = embedded_documents[0]
+
+    print(
+        "Dimensión del vector:",
+        len(first["embedding"])
+    )
+
+    print("\nDocumento:")
+    print(first["metadata"]["source"])
+
+    print("\nPágina:")
+    print(first["metadata"]["page"])
+
+    print("\nPrimeros 10 valores del vector:")
+    print(first["embedding"][:10])
