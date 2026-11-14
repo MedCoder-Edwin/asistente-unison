@@ -9,12 +9,32 @@ Asistente conversacional basado en arquitectura **RAG (Retrieval-Augmented Gener
 El flujo de datos consta de seis etapas secuenciales desde la ingesta documental hasta la generación de respuestas citadas:
 
 ```mermaid
-graph TD
-    A[1. Base documental<br/>PDF · Reglamentos · Convocatorias · Manuales] --> B[2. Procesamiento y fragmentación<br/>Extracción · Limpieza · Chunking · Metadata]
-    B --> C[3. Representación vectorial<br/>BGE-M3 · Embeddings de 1024 dimensiones]
-    C --> D[4. Recuperación de información<br/>ChromaDB · Búsqueda semántica · Top-K]
-    D --> E[5. Generación de respuestas<br/>Qwen 2.5 3B · Prompt de control · Contexto recuperado]
-    E --> F[6. Respuesta fundamentada<br/>Respuesta · Referencias · Documento · Página]
+flowchart TD
+    A["<b>1. Base documental</b>
+    PDF · Reglamentos
+    Convocatorias · Manuales"] --> 
+    B["<b>2. Procesamiento y fragmentación</b>
+    Extracción · Limpieza
+    Chunking · Metadata"] --> 
+    C["<b>3. Representación vectorial</b>
+    BGE-M3
+    Embeddings de 1024 dimensiones"] --> 
+    D["<b>4. Recuperación de información</b>
+    ChromaDB
+    Búsqueda semántica · Top-K"] --> 
+    E["<b>5. Generación de respuestas</b>
+    Qwen 2.5 3B
+    Prompt de control · Contexto"] --> 
+    F["<b>6. Respuesta fundamentada</b>
+    Respuesta · Referencias
+    Documento · Página"]
+
+    style A fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style B fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style C fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style D fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style E fill:#eef2ff,stroke:#c7d2fe,color:#1e293b
+    style F fill:#ecfdf5,stroke:#a7f3d0,color:#064e3b
 ```
 
 ## Descripción técnica por etapas
