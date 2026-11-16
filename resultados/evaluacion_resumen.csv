@@ -1,0 +1,3 @@
+﻿configuracion,recuperacion_documento_%,recuperacion_pagina_%,cita_correcta_%,respuesta_correcta_%,abstencion_indebida_%,abstencion_correcta_%,latencia_promedio_s
+con_reformulacion,100.0,100.0,89.5,89.5,0.0,100.0,37.3
+sin_reformulacion,100.0,100.0,89.5,94.7,0.0,100.0,28.4
